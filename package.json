@@ -1,0 +1,9 @@
+{
+  "name": "egipt-2026",
+  "private": true,
+  "type": "module",
+  "description": "Family trip planner for Cairo, Giza and Alexandria (29 Nov - 3 Dec 2026)",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

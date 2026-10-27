@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#c2742f">
+  <meta name="robots" content="noindex">
+  <title>Egipt 2026</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐪</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="login" class="screen" hidden>
+    <div class="login-card">
+      <div class="login-art">🐪</div>
+      <h1>Egipt 2026</h1>
+      <p class="muted">Kairo · Giza · Aleksandrija<br>29. november – 3. december</p>
+      <form id="loginForm" autocomplete="on">
+        <label for="pw">Vpiši geslo</label>
+        <input id="pw" type="password" autocomplete="current-password" inputmode="text" required>
+        <button class="btn big primary" type="submit">Vstopi</button>
+        <p id="loginErr" class="err" hidden>Geslo ni pravilno. Poskusi še enkrat.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <section id="app" class="screen" hidden>
+    <header class="top">
+      <div>
+        <div class="brand">🐪 Egipt 2026</div>
+        <div class="sub">29. nov – 3. dec</div>
+      </div>
+    </header>
+
+    <!-- CHAT -->
+    <main id="chatView" class="view">
+      <div id="messages" class="messages" aria-live="polite"></div>
+      <div id="chips" class="chips"></div>
+    </main>
+
+    <!-- PLAN -->
+    <main id="planView" class="view" hidden>
+      <div id="plan" class="plan"></div>
+      <div class="plan-foot">
+        <button id="resetBtn" class="btn link" type="button">Začni načrt znova</button>
+        <button id="logoutBtn" class="btn link" type="button">Odjava</button>
+      </div>
+    </main>
+
+    <!-- COMPOSER (chat only) -->
+    <footer id="composer" class="composer">
+      <div id="preview" class="preview" hidden>
+        <img id="previewImg" alt="">
+        <button id="previewX" class="x" type="button" aria-label="Odstrani sliko">✕</button>
+      </div>
+      <div class="tools">
+        <label class="btn tool" for="file">📷 Slika</label>
+        <input id="file" type="file" accept="image/*" hidden>
+        <button id="micSl" class="btn tool mic" type="button" hidden>🎤 Slovensko</button>
+        <button id="micRu" class="btn tool mic" type="button" hidden>🎤 Русский</button>
+      </div>
+      <form id="sendForm" class="send">
+        <textarea id="input" rows="1" placeholder="Napiši, kaj bi rada videla …" enterkeyhint="send"></textarea>
+        <button id="sendBtn" class="btn send-btn" type="submit" aria-label="Pošlji">➤</button>
+      </form>
+    </footer>
+
+    <nav class="tabs">
+      <button class="tab active" data-view="chat" type="button"><span>💬</span>Vprašaj</button>
+      <button class="tab" data-view="plan" type="button"><span>🗓️</span>Načrt<i id="planDot" class="dot" hidden></i></button>
+    </nav>
+  </section>
+
+  <div id="loading" class="loading">🐪</div>
+  <script src="/app.js"></script>
+</body>
+</html>
