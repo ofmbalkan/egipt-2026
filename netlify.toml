@@ -2,6 +2,11 @@
   publish = "public"
   functions = "netlify/functions"
 
+[build.environment]
+  # The code never contains these values; the password is a word that also
+  # appears in the trip text, which trips Netlify's scanner. Other secrets are still scanned.
+  SECRETS_SCAN_OMIT_KEYS = "SITE_PASSWORD,ANTHROPIC_API_KEY"
+
 [functions]
   node_bundler = "esbuild"
 
